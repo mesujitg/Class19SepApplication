@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+
+    <ImageView
+        android:id="@+id/foodImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/foodImg"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/foodCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/foodImg"
+        android:layout_below="@id/foodName"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/foodRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/foodImg"
+        android:layout_below="@id/foodCat"
+        android:textSize="25dp"/>
+
+</RelativeLayout>
+
