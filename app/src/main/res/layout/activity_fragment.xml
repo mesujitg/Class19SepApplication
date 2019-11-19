@@ -8,12 +8,16 @@
         android:id="@+id/btnFirstFrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/btn_style"
+        android:background="@drawable/btn_background"
         android:text="Load First" />
 
     <Button
         android:id="@+id/btnTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/btn_style"
+        android:background="@drawable/btn_background"
         android:text="Tabbed Layout" />
 
     <LinearLayout

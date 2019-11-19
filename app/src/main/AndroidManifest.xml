@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserDetailActivity"></activity>
+        <activity android:name=".HashmapActivity"></activity>
+        <activity android:name=".TabbedActivity"></activity>
+        <activity android:name=".FragmentActivity"></activity>
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".RvActivity" />
+        <activity android:name=".UserDetailActivity" />
         <activity android:name=".UserlistActivity" />
         <activity android:name=".FlActivity" />
         <activity android:name=".TlActivity" />

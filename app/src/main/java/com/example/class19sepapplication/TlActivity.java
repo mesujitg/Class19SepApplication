@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.TextUtils;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -34,12 +36,12 @@ import java.util.regex.Pattern;
 public class TlActivity extends AppCompatActivity
         implements RadioGroup.OnCheckedChangeListener, View.OnClickListener{
 
-    EditText editTextN,editTextD,editTextP,editTextE;
+    EditText editTextN,editTextD,editTextP,editTextE,editTextI;
     RadioGroup radioGroup;
     Spinner spinner;
     Button buttonSubmit,buttonView;
     String name,gender,dob,country,phone,email;
-    String[] countries = {"Nepal","India","Srilanka","Bhutan","Maldives",
+    String[] countries = {"-- Choose --","Nepal","India","Srilanka","Bhutan","Maldives",
             "Myanmar","Pakistan","Afganistan"};
 
     List<User> userList = new ArrayList<>();
@@ -67,6 +69,7 @@ public class TlActivity extends AppCompatActivity
         editTextD = findViewById(R.id.etDob);
         editTextP = findViewById(R.id.etPhone);
         editTextE = findViewById(R.id.etEmail);
+        editTextI = findViewById(R.id.etImg);
         radioGroup = findViewById(R.id.rgGender);
         spinner = findViewById(R.id.spCountry);
         buttonSubmit = findViewById(R.id.btnSubmit);
@@ -123,6 +126,12 @@ public class TlActivity extends AppCompatActivity
                 userList.add(new User(name,gender,dob,country,phone,email));
                 Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show();
             }
+
+//            String uri = "@drawable/"+img;
+//            int resID = getResources().
+//            getIdentifier(uri , null, getPackageName());
+//            Drawable drawable = getResources().getDrawable(resID);
+//            imageView.setImageDrawable(drawable);
         }
 
         if(view.getId() == R.id.etDob){

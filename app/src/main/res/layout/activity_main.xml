@@ -1,142 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:text="Various Layouts" />
-    <Button
-        android:id="@+id/btnLl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Linear Layout" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnRl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Relative Layout" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Various Layouts"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnGl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Grid Layout" />
+        <Button
+            android:id="@+id/btnLl"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Linear Layout" />
 
-    <Button
-        android:id="@+id/btnCl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Constraint Layout" />
+        <Button
+            android:id="@+id/btnRl"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Relative Layout" />
 
-    <Button
-        android:id="@+id/btnTl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Table Layout" />
+        <Button
+            android:id="@+id/btnGl"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Grid Layout" />
 
-    <Button
-        android:id="@+id/btnFl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/btn_style"
-        android:background="@drawable/btn_background"
-        android:text="Frame Layout" />
+        <Button
+            android:id="@+id/btnCl"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Constraint Layout" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnTl"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Table Layout" />
 
+        <Button
+            android:id="@+id/btnFl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/btn_style"
+            android:background="@drawable/btn_background"
+            android:text="Frame Layout" />
 
+        <Button
+            android:id="@+id/btnHm"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="HashMap Example" />
 
+        <Button
+            android:id="@+id/btnRv"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Recycler View" />
 
+        <Button
+            android:id="@+id/btnFrag"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Tabbed Layout" />
 
+    </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-<!--<LinearLayout android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical"-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:text="Various Layouts"/>-->
-<!--    <Button-->
-<!--        android:id="@+id/btnLl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Linear Layout" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnGl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Grid Layout" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnRl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Relative Layout" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnCl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Constraint Layout" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnTl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Table Layout" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnFl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        style="@style/btn_style"-->
-<!--        android:background="@drawable/btn_background"-->
-<!--        android:text="Frame Layout" />-->
+</ScrollView>
 
 
-<!--</LinearLayout>-->
+    <!--<LinearLayout android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="vertical"-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:textSize="30sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:text="Various Layouts"/>-->
+    <!--    <Button-->
+    <!--        android:id="@+id/btnLl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Linear Layout" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnGl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Grid Layout" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnRl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Relative Layout" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnCl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Constraint Layout" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnTl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Table Layout" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnFl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        style="@style/btn_style"-->
+    <!--        android:background="@drawable/btn_background"-->
+    <!--        android:text="Frame Layout" />-->
+
+
+    <!--</LinearLayout>-->
