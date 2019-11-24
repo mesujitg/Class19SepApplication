@@ -88,6 +88,22 @@
             android:background="@drawable/btn_background"
             android:text="Tabbed Layout" />
 
+        <Button
+            android:id="@+id/btnTool"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Toolbar Example" />
+
+        <Button
+            android:id="@+id/btnFile"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="File Handling" />
+
     </LinearLayout>
 
 </ScrollView>
