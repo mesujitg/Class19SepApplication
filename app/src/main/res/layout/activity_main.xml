@@ -64,6 +64,14 @@
             android:background="@drawable/btn_background"
             android:text="Frame Layout" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Various Examples"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btnHm"
             style="@style/btn_style"
@@ -103,6 +111,22 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_background"
             android:text="File Handling" />
+
+        <Button
+            android:id="@+id/btnSp"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Shared Preference" />
+
+        <Button
+            android:id="@+id/btnIm"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Implicit Intent" />
 
     </LinearLayout>
 

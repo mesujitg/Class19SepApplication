@@ -12,7 +12,8 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonLl,buttonGl,buttonRl,buttonCl,buttonTl,
-            buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile;
+            buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile,
+            buttonSp,buttonIm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonHm = findViewById(R.id.btnHm);
         buttonTool = findViewById(R.id.btnTool);
         buttonFile = findViewById(R.id.btnFile);
+        buttonSp = findViewById(R.id.btnSp);
+        buttonIm = findViewById(R.id.btnIm);
 
         buttonLl.setOnClickListener(this);
         buttonGl.setOnClickListener(this);
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonHm.setOnClickListener(this);
         buttonTool.setOnClickListener(this);
         buttonFile.setOnClickListener(this);
+        buttonSp.setOnClickListener(this);
+        buttonIm.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +84,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view.getId() == R.id.btnFile){
             Intent intent = new Intent(this,FileActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnSp){
+            Intent intent = new Intent(this,SharedPreActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnIm){
+            Intent intent = new Intent(this,ImInActivity.class);
             startActivity(intent);
         }
     }

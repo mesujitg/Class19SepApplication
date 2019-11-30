@@ -22,4 +22,18 @@
         android:layout_height="wrap_content"
         android:text="Load" />
 
+    <Button
+        android:id="@+id/btnSaveEx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="askPermission"
+        android:text="Save in External" />
+
+    <Button
+        android:id="@+id/btnLoadEx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="loadExternal"
+        android:text="Load from External" />
+
 </LinearLayout>
