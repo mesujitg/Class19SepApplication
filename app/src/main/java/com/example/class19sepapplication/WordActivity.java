@@ -14,7 +14,6 @@ public class WordActivity extends AppCompatActivity {
 
     ListView listView;
     String[] words = {"apple","orange","grapes","banana"};
-    int a =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
