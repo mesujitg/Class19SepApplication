@@ -12,29 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity"></activity>
-        <activity android:name=".ImInActivity">
+        <activity android:name=".WordActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".ImInActivity"></activity>
         <activity android:name=".SharedPreActivity" />
         <activity android:name=".FileActivity" />
         <activity android:name=".ToobarActivity" />
         <activity android:name=".HashmapActivity" />
         <activity android:name=".TabbedActivity" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".SplashActivity">
-
-        </activity>
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".RvActivity" />
         <activity android:name=".UserDetailActivity" />
         <activity android:name=".UserlistActivity" />
         <activity android:name=".FlActivity" />
         <activity android:name=".TlActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
