@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button buttonLl,buttonGl,buttonRl,buttonCl,buttonTl,
             buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile,
-            buttonSp,buttonIm;
+            buttonSp,buttonIm,buttonWg,buttonDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonFile = findViewById(R.id.btnFile);
         buttonSp = findViewById(R.id.btnSp);
         buttonIm = findViewById(R.id.btnIm);
+        buttonWg = findViewById(R.id.btnWg);
+        buttonDb = findViewById(R.id.btnDb);
 
         buttonLl.setOnClickListener(this);
         buttonGl.setOnClickListener(this);
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonFile.setOnClickListener(this);
         buttonSp.setOnClickListener(this);
         buttonIm.setOnClickListener(this);
+        buttonWg.setOnClickListener(this);
+        buttonDb.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +98,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view.getId() == R.id.btnIm){
             Intent intent = new Intent(this,ImInActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnWg){
+            Intent intent = new Intent(this,WordActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnDb){
+            Intent intent = new Intent(this,DatabaseActivity.class);
             startActivity(intent);
         }
     }
