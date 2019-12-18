@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/edittextborder"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivStImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/burger"/>
+
+    <TextView
+        android:id="@+id/tvStName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivStImg"
+        android:text="name"/>
+
+    <TextView
+        android:id="@+id/tvStEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivStImg"
+        android:layout_below="@id/tvStName"
+        android:text="name"/>
+
+    <TextView
+        android:id="@+id/tvStPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivStImg"
+        android:layout_below="@id/tvStEmail"
+        android:text="name"/>
+
+    <Button
+        android:id="@+id/btnStUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivStImg"
+        android:layout_below="@id/tvStPhone"
+        android:text="edit" />
+
+    <Button
+        android:id="@+id/btnStDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnStUpdate"
+        android:layout_below="@id/tvStPhone"
+        android:text="delete" />
+
+</RelativeLayout>
