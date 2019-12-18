@@ -29,7 +29,7 @@ public class UserDetailActivity extends AppCompatActivity {
         String n = intent.getStringExtra("Name");
         String g = intent.getStringExtra("Gender");
         String d = intent.getStringExtra("DoB");
-        String c = intent.getStringExtra("Country");
+        String c = intent.getStringExtra("Flag");
         String p = intent.getStringExtra("Phone");
         String e = intent.getStringExtra("Email");
 
@@ -37,7 +37,7 @@ public class UserDetailActivity extends AppCompatActivity {
         tvN.setText("Name : "+ n);
         tvG.setText("Gender : "+ g);
         tvD.setText("DoB : "+ d);
-        tvC.setText("Country : "+ c);
+        tvC.setText("Flag : "+ c);
         tvP.setText("Phone : "+ p);
         tvE.setText("Email : "+ e);
 

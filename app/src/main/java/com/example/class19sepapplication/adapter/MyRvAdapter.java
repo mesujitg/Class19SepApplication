@@ -1,4 +1,4 @@
-package com.example.class19sepapplication;
+package com.example.class19sepapplication.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,13 +11,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.class19sepapplication.R;
 import com.example.class19sepapplication.model.Food;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyRvAdapter
-        extends RecyclerView.Adapter<MyRvAdapter.MyHolder> {
+public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyHolder> {
 
     private List<Food> foodList = new ArrayList<>();
     private Context context;

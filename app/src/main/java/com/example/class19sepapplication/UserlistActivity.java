@@ -47,7 +47,7 @@ public class UserlistActivity extends AppCompatActivity {
                 intent1.putExtra("Name",userList.get(i).getName());
                 intent1.putExtra("Gender",userList.get(i).getGender());
                 intent1.putExtra("DoB",userList.get(i).getDob());
-                intent1.putExtra("Country",userList.get(i).getCountry());
+                intent1.putExtra("Flag",userList.get(i).getCountry());
                 intent1.putExtra("Phone",userList.get(i).getPhone());
                 intent1.putExtra("Email",userList.get(i).getEmail());
                 startActivity(intent1);

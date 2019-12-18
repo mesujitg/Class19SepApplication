@@ -14,6 +14,13 @@
         android:text="Add Students" />
 
     <EditText
+        android:id="@+id/stId"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        android:focusable="false"/>
+
+    <EditText
         android:id="@+id/stName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,5 +45,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add" />
+
+    <Button
+        android:id="@+id/stUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDbStudents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

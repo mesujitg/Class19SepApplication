@@ -1,12 +1,12 @@
 package com.example.class19sepapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.class19sepapplication.adapter.MyRvAdapter;
 import com.example.class19sepapplication.model.Food;
 
 import java.util.ArrayList;

@@ -8,7 +8,7 @@ public class Student {
     private int img;
 
     public static final String TBL_CREATE =
-            "CREATE TABLE students (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,email TEXT,phone TEXT)";
+            "CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,email TEXT,phone TEXT)";
 
     public Student(int id, String name, String email, String phone) {
         this.id = id;

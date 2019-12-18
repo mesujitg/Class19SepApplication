@@ -1,4 +1,4 @@
-package com.example.class19sepapplication;
+package com.example.class19sepapplication.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

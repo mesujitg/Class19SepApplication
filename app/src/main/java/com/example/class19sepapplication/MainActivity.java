@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button buttonLl,buttonGl,buttonRl,buttonCl,buttonTl,
             buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile,
-            buttonSp,buttonIm,buttonWg,buttonDb;
+            buttonSp,buttonIm,buttonWg,buttonDb,buttonApiEmp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonIm = findViewById(R.id.btnIm);
         buttonWg = findViewById(R.id.btnWg);
         buttonDb = findViewById(R.id.btnDb);
+        buttonApiEmp = findViewById(R.id.btnApiEmp);
 
         buttonLl.setOnClickListener(this);
         buttonGl.setOnClickListener(this);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonIm.setOnClickListener(this);
         buttonWg.setOnClickListener(this);
         buttonDb.setOnClickListener(this);
+        buttonApiEmp.setOnClickListener(this);
     }
 
     @Override
@@ -108,6 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view.getId() == R.id.btnDb){
             Intent intent = new Intent(this,DatabaseActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnApiEmp){
+            Intent intent = new Intent(this,RetrofitEmpActivity.class);
             startActivity(intent);
         }
     }

@@ -1,4 +1,4 @@
-package com.example.class19sepapplication.Database;
+package com.example.class19sepapplication.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -63,7 +63,31 @@ public class DbHelper extends SQLiteOpenHelper {
         return studentList;
     }
 
-    public long addStudenti(Student student){
+    public boolean updateStudent(Student student,int id){
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            db.execSQL("UPDATE students SET name='" +student.getName()+ "',email='" +student.getEmail()+ "',phone='" +student.getPhone()+ "' WHERE id='"+ id +"'");
+            return true;
+        }
+        catch (Exception e){
+            Log.d("DbEx: ",e.toString());
+            return false;
+        }
+    }
+
+    public boolean deleteStudent(int id){
+        try {
+            SQLiteDatabase database = getWritableDatabase();
+            return database.delete("students", "id=?", new String[]{String.valueOf(id)}) > 0;
+        }
+        catch (Exception e){
+            Log.d("DbEx", e.toString());
+            return false;
+        }
+    }
+
+
+    public long addStudentcv(Student student){
         try {
             SQLiteDatabase database = getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -76,6 +100,22 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (Exception e){
             Log.d("DbEx", e.toString());
             return -1;
+        }
+    }
+
+    public boolean updateStudentcv(Student student,int id){
+        try {
+            SQLiteDatabase database = getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("name",student.getName());
+            values.put("email",student.getEmail());
+            values.put("phone",student.getPhone());
+            database.update("students",values,"id=?",new String[]{ String.valueOf(id) });
+            return true;
+        }
+        catch (Exception e){
+            Log.d("DbEx", e.toString());
+            return false;
         }
     }
 
