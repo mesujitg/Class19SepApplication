@@ -43,7 +43,6 @@ public class FlagApiActivity extends AppCompatActivity {
     Retrofit retrofit;
     EmpInter empInter;
     Uri uri;
-    String imgPath;
     MultipartBody.Part image;
 
     @Override
@@ -149,7 +148,7 @@ public class FlagApiActivity extends AppCompatActivity {
         assert cursor != null;
         cursor.moveToFirst();
         int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-        imgPath = cursor.getString(columnIndex);
+        String imgPath = cursor.getString(columnIndex);
         File file = new File(imgPath);
         RequestBody requestBody =
                 RequestBody.create(MediaType.parse("image/*"),file);
