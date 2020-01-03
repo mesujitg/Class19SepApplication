@@ -9,6 +9,8 @@ import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -27,6 +29,12 @@ public interface EmpInter {
     @POST("create")
     Call<Void> addEmployee(@Body Employee employee);
 
+//    @FormUrlEncoded
+//    @POST("create")
+//    Call<Void> addEmployeei(@Field("name") String name,
+//                            @Field("salary") String sal,
+//                            @Field("age") String age);
+
     @PUT("update/{id}")
     Call<Void> updateEmployee(@Path("id") int id,
                               @Body Employee employee);
@@ -39,7 +47,10 @@ public interface EmpInter {
 
     @Multipart
     @POST("upload")
-    Call<Flag>
-    uploadFlag(@Part MultipartBody.Part img);
+    Call<Flag> uploadFlag(@Part MultipartBody.Part img);
 
+    @FormUrlEncoded
+    @POST("addcountry")
+    Call<Void> addCountry(@Field("country") String c,
+                          @Field("file") String f);
 }

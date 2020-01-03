@@ -30,11 +30,14 @@ public class WordActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ListView listView;
-    TextView textView,tvLvl;
+    TextView textView,tvLvl,tvHint,tvHintWord;
     Button buttonOk,buttonClear;
     String[] words = {"apple","orange","grapes","banana"};
     List<String> allwords = new ArrayList<>();
     int level = 0;
+    int hint = 0;
+    int hint_factor = 0;
+    int hint_num = 1;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
 
@@ -47,6 +50,8 @@ public class WordActivity extends AppCompatActivity {
         //listView = findViewById(R.id.wordList);
         textView = findViewById(R.id.ans);
         tvLvl = findViewById(R.id.lvlTxt);
+        tvHint = findViewById(R.id.lvlHint);
+        tvHintWord = findViewById(R.id.hintWord);
         //buttonOk = findViewById(R.id.btnOk);
         buttonClear = findViewById(R.id.btnClear);
 
@@ -56,8 +61,11 @@ public class WordActivity extends AppCompatActivity {
         loadWords();
 
         level = sp.getInt("lvl",0);
+        hint = sp.getInt("hint",0);
+        hint_factor = sp.getInt("hf",0);
 
         tvLvl.setText("Level: "+ (level+1));
+        tvHint.setText("Hint: "+ hint + " "+hint_factor+"/4");
         //showWord(level);
         showWordrv(level);
 
@@ -75,10 +83,21 @@ public class WordActivity extends AppCompatActivity {
                     if(usr_word.equals(allwords.get(level).toUpperCase())){
                         Toast.makeText(WordActivity.this, "Correct: "+ allwords.get(level).toUpperCase(), Toast.LENGTH_LONG).show();
                         level++;
+                        hint_factor++;
+                        if (hint_factor == 4){
+                            hint++;
+                            hint_factor = 0;
+                        }
+
                         tvLvl.setText("Level: "+ (level+1));
+                        tvHint.setText("Hint: "+ hint + " "+hint_factor+"/4");
                         showWordrv(level);
                         textView.setText("");
+                        tvHintWord.setText("");
+                        hint_num = 1;
                         editor.putInt("lvl",level);
+                        editor.putInt("hint",hint);
+                        editor.putInt("hf",hint_factor);
                         editor.commit();
                      }
                     else {
@@ -120,6 +139,18 @@ public class WordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 textView.setText("");
                 showWordrv(level);
+            }
+        });
+
+        tvHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hint--;
+                tvHint.setText("Hint: "+ hint + " "+hint_factor+"/4");
+                String ans = allwords.get(level);
+                String a = ans.substring(0,hint_num);
+                tvHintWord.setText("Hint: "+ a);
+                hint_num++;
             }
         });
 

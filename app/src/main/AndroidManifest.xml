@@ -14,14 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FlagApiActivity">
+        <activity android:name=".ApiLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RetrofitEmpActivity"></activity>
+        <activity android:name=".FlagApiActivity"></activity>
+        <activity android:name=".RetrofitEmpActivity" />
         <activity android:name=".DatabaseActivity" />
         <activity android:name=".WordActivity" />
         <activity android:name=".DashboardActivity" />

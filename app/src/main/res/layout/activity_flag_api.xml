@@ -31,4 +31,17 @@
         android:layout_gravity="center"
         android:text="Upload Image" />
 
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country..." />
+
+    <Button
+        android:id="@+id/btnAddCon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add Country" />
+
 </LinearLayout>
