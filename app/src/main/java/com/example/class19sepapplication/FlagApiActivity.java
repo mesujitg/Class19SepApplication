@@ -56,7 +56,7 @@ public class FlagApiActivity extends AppCompatActivity {
         textView = findViewById(R.id.tvCountry);
         imageView = findViewById(R.id.ivFlag);
         buttonChoose = findViewById(R.id.btnChooseImg);
-        buttonAddFlag = findViewById(R.id.btnUploadImg);
+//        buttonAddFlag = findViewById(R.id.btnUploadImg);
         buttonAddC = findViewById(R.id.btnAddCon);
         editText = findViewById(R.id.etCountry);
 
@@ -73,18 +73,18 @@ public class FlagApiActivity extends AppCompatActivity {
             }
         });
 
-        buttonAddFlag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadImage(image);
-            }
-        });
+//        buttonAddFlag.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         buttonAddC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                uploadImage(image);
                 String c = editText.getText().toString();
-
                 addCountry(c,file_name);
             }
         });
