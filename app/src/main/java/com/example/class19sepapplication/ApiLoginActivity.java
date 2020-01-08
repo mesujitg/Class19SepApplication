@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.class19sepapplication.api.EmpInter;
 import com.example.class19sepapplication.api.Facebook;
+import com.example.class19sepapplication.api.Retro;
+import com.example.class19sepapplication.api.UserApi;
 import com.example.class19sepapplication.model.ApiUser;
 
 import retrofit2.Call;
@@ -44,7 +46,17 @@ public class ApiLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ApiUser user = new ApiUser(un.getText().toString(),
                         pw.getText().toString());
-                userLogin(user);
+                //userLogin(user);
+                UserApi userApi = new UserApi();
+                if(userApi.userLogin(user)){
+                    // go to dashboard
+                    Toast.makeText(ApiLoginActivity.this,
+                            Retro.token, Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(ApiLoginActivity.this,
+                            "wrong id or password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

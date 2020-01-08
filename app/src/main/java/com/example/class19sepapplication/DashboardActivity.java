@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.class19sepapplication.api.Facebook;
 import com.example.class19sepapplication.model.Task;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -44,8 +45,8 @@ public class DashboardActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getTasks();
+                //loadTasks(mytoken);
+                getTasks(mytoken);
             }
         });
 
@@ -60,25 +61,35 @@ public class DashboardActivity extends AppCompatActivity {
         facebook = retrofit.create(Facebook.class);
     }
 
-    private void getTasks(){
-        Call<List<Task>> listCall = facebook.getTasks(mytoken);
+    private void getTasks(String token){
+        Call<List<Task>> listCall = facebook.getTasks(token);
+        StrictMode();
+        try {
+            Response<List<Task>> listResponse = listCall.execute();
+            if (listResponse.isSuccessful()){
+                Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private void loadTasks(String token){
+        Call<List<Task>> listCall = facebook.getTasks(token);
         listCall.enqueue(new Callback<List<Task>>() {
             @Override
             public void onResponse(Call<List<Task>> call, Response<List<Task>> response) {
                 List<Task> taskList = response.body();
-                Toast.makeText(DashboardActivity.this,
-                        String.valueOf(taskList.size()) + String.valueOf(response.code()) ,
+                Toast.makeText(DashboardActivity.this, String.valueOf(response.code()),
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<List<Task>> call, Throwable t) {
-                Log.d("MyEx: ",t.getMessage());
+                Log.d("MyEx: ", t.getMessage());
             }
         });
     }
-
 
 
 

@@ -17,7 +17,5 @@ public interface Facebook {
     Call<ApiUser> userLogin(@Body ApiUser apiUser);
 
     @GET("tasks")
-    Call<List<Task>>
-    getTasks(@Header("Authorization")
-                     String authHeader);
+    Call<List<Task>> getTasks(@Header("Authorization") String authHeader);
 }
