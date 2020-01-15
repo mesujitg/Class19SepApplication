@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button buttonLl,buttonGl,buttonRl,buttonCl,buttonTl,
             buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile,
-            buttonSp,buttonIm,buttonWg,buttonDb,buttonApiEmp,buttonApiFlag;
+            buttonSp,buttonIm,buttonWg,buttonDb,buttonApiEmp,buttonApiFlag,
+            buttonApiTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDb = findViewById(R.id.btnDb);
         buttonApiEmp = findViewById(R.id.btnApiEmp);
         buttonApiFlag = findViewById(R.id.btnApiFlag);
+        buttonApiTask = findViewById(R.id.btnApiTask);
 
         buttonLl.setOnClickListener(this);
         buttonGl.setOnClickListener(this);
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDb.setOnClickListener(this);
         buttonApiEmp.setOnClickListener(this);
         buttonApiFlag.setOnClickListener(this);
+        buttonApiTask.setOnClickListener(this);
     }
 
     @Override
@@ -122,6 +125,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view.getId() == R.id.btnApiFlag){
             Intent intent = new Intent(this,FlagApiActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnApiTask){
+            Intent intent = new Intent(this,ApiLoginActivity.class);
             startActivity(intent);
         }
     }

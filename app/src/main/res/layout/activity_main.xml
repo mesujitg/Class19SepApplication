@@ -160,6 +160,14 @@
             android:background="@drawable/btn_background"
             android:text="Flag API" />
 
+        <Button
+            android:id="@+id/btnApiTask"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Task Manager API" />
+
     </LinearLayout>
 
 </ScrollView>

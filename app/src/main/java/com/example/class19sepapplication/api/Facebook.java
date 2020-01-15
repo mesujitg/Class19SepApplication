@@ -2,9 +2,11 @@ package com.example.class19sepapplication.api;
 
 import com.example.class19sepapplication.model.ApiUser;
 import com.example.class19sepapplication.model.Task;
+import com.example.class19sepapplication.model.Test;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -17,5 +19,8 @@ public interface Facebook {
     Call<ApiUser> userLogin(@Body ApiUser apiUser);
 
     @GET("tasks")
-    Call<List<Task>> getTasks(@Header("Authorization") String authHeader);
+    Call<List<Test>> getTasks(@Header("Authorization") String authHeader);
+
+    @GET("tasks")
+    Call<ResponseBody> getAlltasks(@Header("Authorization") String authHeader);
 }

@@ -1,5 +1,6 @@
 package com.example.class19sepapplication.api;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -14,8 +15,8 @@ public class Retro {
     public static Retrofit getInstance(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory
-                        .create())
+                .client(new OkHttpClient.Builder().build())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit;
     }

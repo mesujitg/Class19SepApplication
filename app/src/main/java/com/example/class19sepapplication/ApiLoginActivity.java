@@ -49,9 +49,10 @@ public class ApiLoginActivity extends AppCompatActivity {
                 //userLogin(user);
                 UserApi userApi = new UserApi();
                 if(userApi.userLogin(user)){
-                    // go to dashboard
-                    Toast.makeText(ApiLoginActivity.this,
-                            Retro.token, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ApiLoginActivity.this,
+                            DashboardActivity.class);
+                    intent.putExtra("token",mytoken);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(ApiLoginActivity.this,
