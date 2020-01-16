@@ -168,6 +168,14 @@
             android:background="@drawable/btn_background"
             android:text="Task Manager API" />
 
+        <Button
+            android:id="@+id/btnMap"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_background"
+            android:text="Google Map" />
+
     </LinearLayout>
 
 </ScrollView>

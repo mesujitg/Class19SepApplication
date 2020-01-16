@@ -22,10 +22,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.class19sepapplication.api.EmpInter;
+import com.example.class19sepapplication.api.Strict;
 import com.example.class19sepapplication.model.Flag;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -76,16 +80,26 @@ public class FlagApiActivity extends AppCompatActivity {
 //        buttonAddFlag.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//
+//                uploadImage(image);
 //            }
 //        });
 
         buttonAddC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadImage(image);
                 String c = editText.getText().toString();
-                addCountry(c,file_name);
+                uploadImageAsync(image);
+                Flag flag = new Flag(0,c,file_name);
+                addCountry(flag);
+
+
+//                uploadImage(image);
+//                addCountry(c,file_name);
+
+//                Map<String,String> map = new HashMap<>();
+//                map.put("country",c);
+//                map.put("file",file_name);
+//                addCountry(map);
             }
         });
     }
@@ -131,9 +145,7 @@ public class FlagApiActivity extends AppCompatActivity {
 
     public void askPermission() {
         if (ContextCompat.checkSelfPermission(this,
-                        Manifest.permission.
-                                WRITE_EXTERNAL_STORAGE) !=
-                PackageManager.PERMISSION_GRANTED) {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission
                             .WRITE_EXTERNAL_STORAGE},
@@ -189,8 +201,55 @@ public class FlagApiActivity extends AppCompatActivity {
         });
     }
 
+    private void uploadImageAsync(MultipartBody.Part image){
+        Call<Flag> flagUpload = empInter.uploadFlag(image);
+        Strict.StrictMode();
+        try {
+            Response<Flag> flagResponse = flagUpload.execute();
+            if(flagResponse.isSuccessful()){
+                file_name = flagResponse.body().getFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void addCountry(String country,String file){
         Call<Void> addCon = empInter.addCountry(country,file);
+
+        addCon.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(FlagApiActivity.this,
+                        "Added", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("Ex: ",t.getMessage());
+            }
+        });
+    }
+
+    private void addCountry(Map<String,String> map){
+        Call<Void> addCon = empInter.addCountryi(map);
+
+        addCon.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(FlagApiActivity.this,
+                        "Added", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("Ex: ",t.getMessage());
+            }
+        });
+    }
+
+    private void addCountry(Flag flag){
+        Call<Void> addCon = empInter.addCountryii(flag);
 
         addCon.enqueue(new Callback<Void>() {
             @Override

@@ -4,12 +4,14 @@ import com.example.class19sepapplication.model.Employee;
 import com.example.class19sepapplication.model.Flag;
 
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -29,12 +31,6 @@ public interface EmpInter {
     @POST("create")
     Call<Void> addEmployee(@Body Employee employee);
 
-//    @FormUrlEncoded
-//    @POST("create")
-//    Call<Void> addEmployeei(@Field("name") String name,
-//                            @Field("salary") String sal,
-//                            @Field("age") String age);
-
     @PUT("update/{id}")
     Call<Void> updateEmployee(@Path("id") int id,
                               @Body Employee employee);
@@ -51,6 +47,12 @@ public interface EmpInter {
 
     @FormUrlEncoded
     @POST("addcountry")
-    Call<Void> addCountry(@Field("country") String c,
-                          @Field("file") String f);
+    Call<Void> addCountry(@Field("country") String c, @Field("file") String f);
+
+    @FormUrlEncoded
+    @POST("addcountry")
+    Call<Void> addCountryi(@FieldMap Map<String,String> map);
+
+    @POST("addcountry")
+    Call<Void> addCountryii(@Body Flag flag);
 }
