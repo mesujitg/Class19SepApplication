@@ -19,13 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SensorActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,6 +35,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="My Map" />
+        <activity android:name=".SensorActivity" />
         <activity android:name=".ApiLoginActivity" />
         <activity android:name=".FlagApiActivity" />
         <activity android:name=".RetrofitEmpActivity" />
@@ -55,7 +50,11 @@
         <activity android:name=".TabbedActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".RvActivity" />
         <activity android:name=".UserDetailActivity" />

@@ -8,8 +8,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Spinner
+            android:id="@+id/spSensor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/my_sensors"
+            android:layout_marginBottom="20dp"/>
+
         <TextView
             android:id="@+id/tvSensor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"/>

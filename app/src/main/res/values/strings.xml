@@ -4,4 +4,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="my_sensors">
+        <item>All</item>
+        <item>Gyroscope</item>
+        <item>Accelerometer</item>
+        <item>Proximity</item>
+        <item>Light</item>
+        <item>Pedometer</item>
+        <item>Temperature</item>
+    </string-array>
 </resources>
