@@ -21,20 +21,20 @@ public class MyService extends Service {
         return null;
     }
 
+    int count =0;
     @Override
     public void onCreate() {
-        Toast.makeText(context, "Service Started",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Service created!", Toast.LENGTH_LONG).show();
+
         handler = new Handler();
         runnable = new Runnable() {
-            @Override
             public void run() {
-                Toast.makeText(context, "Test",
-                        Toast.LENGTH_SHORT).show();
-                handler.postDelayed(runnable,2000);
+                count++;
+                Toast.makeText(context, "Test : " + count  , Toast.LENGTH_LONG).show();
+                handler.postDelayed(runnable, 2000);
             }
         };
-        handler.postDelayed(runnable,2000);
+        handler.postDelayed(runnable, 2000);
     }
 
     @Override
@@ -42,5 +42,9 @@ public class MyService extends Service {
         handler.removeCallbacks(runnable);
         Toast.makeText(context, "Service Stopped",
                 Toast.LENGTH_SHORT).show();
+    }
+
+    public static double getRandom(double min, double max){
+        return Math.random()*((max-min)+1)+min;
     }
 }
