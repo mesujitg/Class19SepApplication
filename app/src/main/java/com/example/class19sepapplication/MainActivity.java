@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonLl,buttonGl,buttonRl,buttonCl,buttonTl,
             buttonFl,buttonRv,buttonFrag,buttonHm,buttonTool,buttonFile,
             buttonSp,buttonIm,buttonWg,buttonDb,buttonApiEmp,buttonApiFlag,
-            buttonApiTask,buttonMap,buttonSensor;
+            buttonApiTask,buttonMap,buttonSensor,buttonService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonApiTask = findViewById(R.id.btnApiTask);
         buttonMap = findViewById(R.id.btnMap);
         buttonSensor = findViewById(R.id.btnSensor);
+        buttonService = findViewById(R.id.btnService);
 
         buttonLl.setOnClickListener(this);
         buttonGl.setOnClickListener(this);
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonApiTask.setOnClickListener(this);
         buttonMap.setOnClickListener(this);
         buttonSensor.setOnClickListener(this);
+        buttonService.setOnClickListener(this);
     }
 
     @Override
@@ -144,6 +146,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view.getId() == R.id.btnSensor){
             Intent intent = new Intent(this,SensorActivity.class);
+            startActivity(intent);
+        }
+
+        if(view.getId() == R.id.btnService){
+            Intent intent = new Intent(this,NotificationActivity.class);
             startActivity(intent);
         }
     }

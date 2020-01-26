@@ -9,8 +9,7 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class UserApi {
-    Facebook fb = Retro.getInstance()
-            .create(Facebook.class);
+    Facebook fb = Retro.getInstance().create(Facebook.class);
     boolean isloggedIn = false;
 
     public boolean userLogin(ApiUser apiUser){
@@ -22,7 +21,8 @@ public class UserApi {
                 isloggedIn = true;
                 Retro.token += loginResponse.body().getToken();
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         return isloggedIn;

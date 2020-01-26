@@ -46,6 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
 //        mytoken = "Bearer "+
 //                i.getStringExtra("token");
 
+        Toast.makeText(this, Retro.token, Toast.LENGTH_SHORT).show();
         getInstance();
 
         button.setOnClickListener(new View.OnClickListener() {
