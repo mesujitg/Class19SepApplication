@@ -39,15 +39,13 @@ public class ArithmaticTest {
                 actual_result);
     }
 
-//    @Test
-//    public void testLogin(){
-//        UserApi ua = new UserApi();
-//        boolean actual = ua.userLogin(new
-//                ApiUser("sujit2",
-//                "sujit2"));
-//        boolean expected = true;
-//        assertEquals(expected,actual);
-//    }
+    @Test
+    public void testLogin(){
+        UserApi ua = new UserApi();
+        ApiUser usr = new ApiUser("sujit2", "sujit2");
+        //remove strict mode from method while testing
+        assertTrue(ua.userLogin(usr));
+    }
 
     @Test
     public void testLogini(){
@@ -55,13 +53,14 @@ public class ArithmaticTest {
                 .create(Facebook.class);
         Call<ApiUser> userCall =
                 fb.userLogin(new ApiUser("sujit2",
-                "asdf"));
+                "sujit2"));
         try {
             Response<ApiUser> response = userCall.execute();
-            int ac = response.code();
-            int ex = 200;
-//            assertTrue(response.isSuccessful());
-            assertEquals(ex,ac);
+            assertTrue(response.isSuccessful());
+//            int ac = response.code();
+//            int ex = 200;
+//            assertEquals(ex,ac);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

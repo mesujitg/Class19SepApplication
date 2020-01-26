@@ -14,7 +14,7 @@ public class UserApi {
 
     public boolean userLogin(ApiUser apiUser){
         Call<ApiUser> userCall = fb.userLogin(apiUser);
-        Strict.StrictMode();
+        //Strict.StrictMode();
         try {
             Response<ApiUser> loginResponse = userCall.execute();
             if(loginResponse.isSuccessful()){
