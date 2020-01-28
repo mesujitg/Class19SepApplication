@@ -7,6 +7,9 @@ import com.example.class19sepapplication.api.Retro;
 import com.example.class19sepapplication.api.UserApi;
 import com.example.class19sepapplication.model.ApiUser;
 import com.example.class19sepapplication.model.Arithmatic;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,6 +21,8 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 public class ArithmaticTest {
+
+    UserApi ua = null;
 
     @Test
     public void testAdd(){
@@ -39,12 +44,22 @@ public class ArithmaticTest {
                 actual_result);
     }
 
+    @Before
+    public void start_up(){
+        ua = new UserApi();
+    }
+
     @Test
     public void testLogin(){
-        UserApi ua = new UserApi();
-        ApiUser usr = new ApiUser("sujit2", "sujit2");
+        ApiUser usr = new ApiUser("sujit2",
+                "sujit2");
         //remove strict mode from method while testing
         assertTrue(ua.userLogin(usr));
+    }
+
+    @After
+    public void wrap_up(){
+        ua = null;
     }
 
     @Test
@@ -53,7 +68,7 @@ public class ArithmaticTest {
                 .create(Facebook.class);
         Call<ApiUser> userCall =
                 fb.userLogin(new ApiUser("sujit2",
-                "sujit2"));
+                "asdf"));
         try {
             Response<ApiUser> response = userCall.execute();
             assertTrue(response.isSuccessful());

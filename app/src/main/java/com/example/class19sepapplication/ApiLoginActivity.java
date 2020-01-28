@@ -44,8 +44,7 @@ public class ApiLoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApiUser user = new ApiUser(un.getText().toString(),
-                        pw.getText().toString());
+                ApiUser user = new ApiUser(un.getText().toString(), pw.getText().toString());
                 //userLogin(user);
                 UserApi userApi = new UserApi();
                 if(userApi.userLogin(user)){

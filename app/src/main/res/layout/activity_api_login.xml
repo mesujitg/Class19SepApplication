@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="sujit2"
+        android:text=""
         android:hint="Username..." />
 
     <EditText
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:inputType="textPassword"
-        android:text="sujit2"
+        android:text=""
         android:hint="Password..." />
 
     <Button
