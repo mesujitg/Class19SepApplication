@@ -21,7 +21,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(JUnit4.class)
 public class ApiLoginTest {
     @Rule
-    public ActivityTestRule<ApiLoginActivity> rule = new ActivityTestRule<>(ApiLoginActivity.class);
+    public ActivityTestRule<ApiLoginActivity> rule =
+            new ActivityTestRule<>(ApiLoginActivity.class);
     String un = "sujit2";
     String pw = "sujit2";
 
@@ -32,6 +33,7 @@ public class ApiLoginTest {
         onView(withId(R.id.apiPw)).perform(typeText(pw));
         closeSoftKeyboard();
         onView(withId(R.id.apiLogin)).perform(click());
-        onView(withId(R.id.tvDashboard)).check(matches(isDisplayed()));
+        onView(withId(R.id.tvDashboard))
+                .check(matches(isDisplayed()));
     }
 }

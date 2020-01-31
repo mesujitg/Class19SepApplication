@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':mywearapplication'
 rootProject.name='Class19SepApplication'
